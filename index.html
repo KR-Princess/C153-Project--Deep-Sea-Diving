@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+
+        <script src="rotation.js"></script>
+    </head>
+    <body>
+        <a-scene background="color:#3D30A2">
+
+            <a-entity id="look" look-controls camera position="0 2 20"></a-entity>
+      
+            <!--Asset Management-->
+            <a-assets timeout="10000">        
+              
+              <a-asset-item id="Ocean_map" src="./Assets/Ocean/source/Spatial Skybox Sample.gltf" ></a-asset-item>
+              <a-asset-item id="Diver_body" src="./Assets/Diver/scene.gltf"></a-asset-item>
+          
+            </a-assets>
+      
+            <!-- Terrain  -->
+          <a-entity id="Terrain" gltf-model="#Ocean_map" position="0 0 0" scale="0.1 0.1 0.1" animation="property: position; to:0 0 1000; easing:linear; loop:true; dur:1500000" rotation="0 0 0" rotatee>  </a-entity>
+          <a-entity id="Plane" gltf-model="#Diver_body" position="0 0 10" scale="0.1 0.1 0.1" rotation="90 180 0" planerotatee>  </a-entity>  
+          </a-scene>
+    </body>
+</html>
